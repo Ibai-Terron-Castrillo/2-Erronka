@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+.openbtn{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: transparent;
+    border: transparent;
+    font-size: 30px;
+    color: white;
+}
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container {
+    margin-top: 150px;
+    padding: 15px;
+}
+
+.news-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #007BFF;
+}
+
+.news-item p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.load-more {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.load-more:hover {
+    background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+    .news-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .news-item h3 {
+        flex: 2;
+    }
+
+    .news-item p {
+        flex: 3;
+    }
+
+    .section-title {
+        font-size: 1.2em;
+    }
+
+    p, .list-item {
+        font-size: 0.9em;
+    }
+
+    .sub-title {
+        font-size: 1em;
+    }
+}
+.topnav {
+    overflow: hidden;
+    background:rgba(0,86,179, 0.93);
+  }
+  
+  /* This style will change when the screen becomes bigger */
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Links of sidebar style */
+  .sidebar a {
+    float: none;
+    width: 100%;
+    display: block;
+    background:transparent;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+  }
+  
+  
+  .sidebar .closebtn {
+    padding-right: 1em;
+    text-align: left;
+    font-size: 40px;
+  }
