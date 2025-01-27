@@ -28,16 +28,13 @@ $(document).ready(function() {
         });
     }
 
-    // Cargar las primeras berriak al iniciar
     loadNews(currentPage);
 
-    // Cargar más berriak al hacer clic
     $('#load-more').click(function() {
         currentPage++;
         loadNews(currentPage);
     });
 });
-
 function openNav() {
     document.getElementById("mySidebar").style.width = "75%";
 }
@@ -53,5 +50,22 @@ mediaqueryList.addListener(function (EventoMediaQueryList) {
         document.getElementById("mySidebar").style.width = "100%";
     } else {
         document.getElementById("mySidebar").style.width = "0";
+    }
+});
+
+function openLogin() {
+    document.getElementById("login").style.width = "75%";
+}
+
+function closeLogin() {
+    document.getElementById("login").style.width = "0";
+}
+
+var mediaqueryList = window.matchMedia("(min-width: 759px)");
+mediaqueryList.addListener(function (EventoMediaQueryList) {
+    if (EventoMediaQueryList.matches) {
+        document.getElementById("login").style.width = "100%";
+    } else {
+        document.getElementById("login").style.width = "0";
     }
 });

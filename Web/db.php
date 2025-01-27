@@ -6,7 +6,7 @@ function konexioaSortu()
     $servername = "localhost:3306";
     $username = "root";
     $password = "1MG2024";
-    $dbname = "Erronka2";
+    $dbname = "erronka2";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

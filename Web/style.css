@@ -14,6 +14,21 @@ body {
     font-size: 30px;
     color: white;
 }
+.loginbtn{
+    position: absolute;
+    right: 40px;
+    top: 25px;
+    background-color: transparent;
+    border: transparent;
+    font-size: 30px;
+    color: white;
+}
+
+.fas fa-user-alt{
+    
+    color: white;
+}
+
 header {
     background-color: #007BFF;
     color: white;
@@ -124,6 +139,51 @@ header {
   
   
   .sidebar .closebtn {
+    padding-right: 1em;
+    text-align: left;
+    font-size: 40px;
+  }
+
+  .login {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Links of sidebar style */
+  .login a {
+    float: none;
+    width: 100%;
+    display: block;
+    background:transparent;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+  }
+  
+.login h1{
+    color: white;
+    text-align: center;
+}
+
+  .login input{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20px;
+    width: 60%;
+  }
+
+  .login i{
+    color: white;
+    margin-left: 10%;
+  }
+
+  .login .closebtn {
     padding-right: 1em;
     text-align: left;
     font-size: 40px;
