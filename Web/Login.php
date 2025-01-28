@@ -1,10 +1,8 @@
 <div class="topnav login" id="login">
     <a href="javascript:void(0)" class="closebtn" onclick="closeLogin()">×</a>
+    <h1>Saioa Hasi</h1>
 
-    <?php
-    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-        echo'<h1>Saioa Hasi</h1>
-        <form action="autenticacion.php" method="post">
+    <form action="autenticacion.php" method="post">
         <label for="username">
             <i class="fas fa-user"></i>
         </label>
@@ -14,17 +12,5 @@
         </label>
         <input type="password" name="password" placeholder="Pasahitza" id="password" required>
         <input type="submit" value="Sartu">
-    </form>';
-    }
-    ?>
-    
-
-    <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
-        <form action="saioaItxi.php" method="post"
-            onsubmit="return confirm('Saioa itxi nahi duzu?');">
-            <button type="submit">Saioa Itxi</button>
-        </form>
-
-    <?php endif; ?>
-
+    </form>
 </div>
