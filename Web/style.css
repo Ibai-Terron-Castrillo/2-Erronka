@@ -8,7 +8,7 @@ body {
 .openbtn{
     position: absolute;
     left: 20px;
-    top: 20px;
+    top: 40px;
     background-color: transparent;
     border: transparent;
     font-size: 30px;
@@ -17,11 +17,55 @@ body {
 .loginbtn{
     position: absolute;
     right: 40px;
-    top: 25px;
+    top: 45px;
     background-color: transparent;
     border: transparent;
     font-size: 30px;
     color: white;
+}
+
+.about-us {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.about-us h2 {
+    font-size: 28px;
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-us h3 {
+    font-size: 22px;
+    color: #007BFF;
+    margin-top: 30px;
+}
+
+.about-us ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-us .list-item {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.about-us .list-item strong {
+    color: #007BFF;
 }
 
 .fas fa-user-alt{
@@ -42,7 +86,7 @@ header {
 }
 
 .container {
-    margin-top: 150px;
+    margin-top: 170px;
     padding: 15px;
 }
 
@@ -83,6 +127,39 @@ header {
     background-color: #0056b3;
 }
 
+.contact-info {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
 @media (min-width: 768px) {
     .news-item {
         display: flex;
@@ -107,6 +184,34 @@ header {
 
     .sub-title {
         font-size: 1em;
+    }
+
+    .contact-info {
+        padding: 30px;
+    }
+
+    .contact-info h2 {
+        font-size: 28px;
+    }
+
+    .contact-info p, .contact-info ul li {
+        font-size: 18px;
+    }
+
+    .about-us {
+        padding: 40px;
+    }
+
+    .about-us h2 {
+        font-size: 32px;
+    }
+
+    .about-us p, .about-us .list-item {
+        font-size: 18px;
+    }
+
+    .about-us h3 {
+        font-size: 26px;
     }
 }
 .topnav {
@@ -172,6 +277,13 @@ header {
 }
 
   .login input{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20px;
+    width: 60%;
+  }
+
+  .login button{
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 20px;
