@@ -19,6 +19,20 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? '
     <?PHP require_once("Sidebar.php"); ?>
     <?PHP require_once("Login.php"); ?>
 
+    <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+        <div id="cart-container">
+            <button id="cart-icon">
+            <i class='fas fa-shopping-cart'></i> <span id="cart-count">0</span>
+            </button>
+            <div id="cart-dropdown" class="hidden">
+                <ul id="cart-items"></ul>
+                <button id="checkout-button">Erosi</button>
+            </div>
+        </div>
+
+
+    <?php endif; ?>
+
     <div class="container" id="prod-container">
 
     </div>

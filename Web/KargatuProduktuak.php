@@ -19,7 +19,9 @@ $offset = ($page - 1) * $limit;
 
 try {
 
-    $stmt = $pdo->prepare("SELECT `biltegia`.`ProduktuIzena`,
+    $stmt = $pdo->prepare("SELECT 
+    `biltegia`.`ProduktuId`,
+    `biltegia`.`ProduktuIzena`,
     `biltegia`.`ProduktuMota`,
     `biltegia`.`ProduktuEgoera`,
     `biltegia`.`ProduktuIruId`,

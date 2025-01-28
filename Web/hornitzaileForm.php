@@ -3,7 +3,7 @@
 
 <header>
     <a href="berriak.php" class="openbtn"><i class="fa fa-home" aria-hidden="true"></i></a>
-    <h1>Hornitzaile Bihurtu</h1>
+    <h1>Hornitzaile <br> Bihurtu</h1>
 </header>
 <form class="registroform" action="hornitzaileGehitu.php" method="post">
     <label for="izena">Izena</label>
