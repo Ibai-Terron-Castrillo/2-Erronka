@@ -95,6 +95,7 @@ function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
 }
 
+//If media query changes this will let us to have the sidebar in the expected status
 var mediaqueryList = window.matchMedia("(min-width: 759px)");
 mediaqueryList.addListener(function (EventoMediaQueryList) {
     if (EventoMediaQueryList.matches) {
