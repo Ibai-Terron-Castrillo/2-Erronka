@@ -3,8 +3,8 @@
     <a href="Berriak.php">Berriak</a>
     <a href="GuriBuruz.php">Guri Buruz</a>
     <a href="Kontaktua.php">Kontaktua</a>
-    <a href="#">Katalogoa</a>
+    <a href="katalogoa.php">Katalogoa</a>
     <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
-            <li><a href="">Hornitzaile Bihurtu</a></li>
+            <a href="hornitzaileForm.php">Hornitzaile Bihurtu</a>
         <?php endif; ?>
 </div>

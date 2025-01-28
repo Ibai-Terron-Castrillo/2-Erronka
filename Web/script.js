@@ -34,6 +34,58 @@ $(document).ready(function() {
         currentPage++;
         loadNews(currentPage);
     });
+
+    let currentPageShop = 1;
+
+    function loadShop(page) {
+        $.ajax({
+            url: 'KargatuProduktuak.php?page=1',
+            type: 'GET',
+            data: { page: page },
+            dataType: 'json',
+            success: function(data) {
+                if (data.length > 0) {
+                    data.forEach(function(produktuak) {
+                        let productHtml = `
+                            <div class="prod-item">
+                                <h3>${produktuak.ProduktuIzena}</h3>
+                                <p>Mota: ${produktuak.ProduktuMota}</p>
+                                <p>Egoera: ${produktuak.ProduktuEgoera}</p>
+                                <p>Prezioa: ${produktuak.ProduktuPrezioa}€</p>
+                                <p>Stock: ${produktuak.ProduktuKantitatea}</p>
+                                <img src="${produktuak.ProduktuIruId}" alt="" style="width:100%;">`;
+
+                        if (isLoggedIn === 'true') {
+                            productHtml += `
+                                <button class="erosaski" onclick="window.location.href='';">
+                                    Erosi
+                                </button>
+                                <button class="erosaski" onclick="window.location.href='';">
+                                    Saskira gehitu
+                                </button>
+                            `;
+                        }
+
+                        productHtml += `</div>`; 
+
+                        $('#prod-container').append(productHtml);
+                    });
+                } else {
+                    $('#load-more-prod').hide();
+                }
+            },
+            error: function() {
+                alert('Ezin izan dira kargatu produktuak.');
+            }
+        });
+    }
+
+    loadShop(currentPageShop);
+
+    $('#load-more-prod').click(function() {
+        currentPageShop++;
+        loadShop(currentPageShop);
+    });
 });
 function openNav() {
     document.getElementById("mySidebar").style.width = "75%";

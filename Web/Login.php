@@ -3,7 +3,7 @@
 
     <?php
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-        echo'<h1>Saioa Hasi</h1>
+        echo '<h1>Saioa Hasi</h1>
         <form action="autenticacion.php" method="post">
         <label for="username">
             <i class="fas fa-user"></i>
@@ -13,16 +13,16 @@
             <i class="fas fa-lock"></i>
         </label>
         <input type="password" name="password" placeholder="Pasahitza" id="password" required>
-        <input type="submit" value="Sartu">
+        <input type="submit" class="botoia" value="Sartu">
     </form>';
+        echo '<p>Ez duzu konturik? <a href="registroForm.php" class"registrolink">Erregistratu Hemen!</a></p>';
     }
     ?>
-    
+
 
     <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
-        <form action="saioaItxi.php" method="post"
-            onsubmit="return confirm('Saioa itxi nahi duzu?');">
-            <button type="submit">Saioa Itxi</button>
+        <form action="saioaItxi.php" method="post" onsubmit="return confirm('Saioa itxi nahi duzu?');">
+            <button type="submit" class="botoia">Saioa Itxi</button>
         </form>
 
     <?php endif; ?>

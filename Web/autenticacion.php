@@ -15,12 +15,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $stmt->fetch();
 
             if ($_POST['password'] === $Pasahitza) {
-                session_regenerate_id(); 
+                session_regenerate_id();
                 $_SESSION['loggedin'] = TRUE;
-                $_SESSION['name'] = $_POST['username']; 
+                $_SESSION['name'] = $_POST['username'];
                 $_SESSION['id'] = $idBezeroa;
 
-               
+
                 header('Location: berriak.php');
                 exit();
             } else {
