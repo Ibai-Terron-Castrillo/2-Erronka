@@ -1,5 +1,3 @@
-
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,7 +8,7 @@ body {
 .openbtn{
     position: absolute;
     left: 20px;
-    top: 20px;
+    top: 40px;
     background-color: transparent;
     border: transparent;
     font-size: 30px;
@@ -19,11 +17,55 @@ body {
 .loginbtn{
     position: absolute;
     right: 40px;
-    top: 25px;
+    top: 45px;
     background-color: transparent;
     border: transparent;
     font-size: 30px;
     color: white;
+}
+
+.about-us {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.about-us h2 {
+    font-size: 28px;
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-us h3 {
+    font-size: 22px;
+    color: #007BFF;
+    margin-top: 30px;
+}
+
+.about-us ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-us .list-item {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.about-us .list-item strong {
+    color: #007BFF;
 }
 
 .fas fa-user-alt{
@@ -44,7 +86,7 @@ header {
 }
 
 .container {
-    margin-top: 150px;
+    margin-top: 170px;
     padding: 15px;
 }
 
@@ -85,6 +127,39 @@ header {
     background-color: #0056b3;
 }
 
+.contact-info {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
 @media (min-width: 768px) {
     .news-item {
         display: flex;
@@ -109,6 +184,34 @@ header {
 
     .sub-title {
         font-size: 1em;
+    }
+
+    .contact-info {
+        padding: 30px;
+    }
+
+    .contact-info h2 {
+        font-size: 28px;
+    }
+
+    .contact-info p, .contact-info ul li {
+        font-size: 18px;
+    }
+
+    .about-us {
+        padding: 40px;
+    }
+
+    .about-us h2 {
+        font-size: 32px;
+    }
+
+    .about-us p, .about-us .list-item {
+        font-size: 18px;
+    }
+
+    .about-us h3 {
+        font-size: 26px;
     }
 }
 .topnav {
@@ -155,8 +258,11 @@ header {
     right: 0;
     overflow-x: hidden;
   }
-  
-  /* Links of sidebar style */
+
+  .registrolink{
+    text-decoration: underline;
+}
+
   .login a {
     float: none;
     width: 100%;
@@ -164,16 +270,35 @@ header {
     background:transparent;
     color: white;
     text-align: center;
-    padding: 20px;
-    text-decoration: none;
+    padding-top: 10px;
   }
-  
+
 .login h1{
     color: white;
     text-align: center;
 }
 
+.login p{
+    color: white;
+    text-align: center;
+}
+
   .login input{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20px;
+    width: 60%;
+    border-radius: 7px;
+  }
+
+.login .botoia{
+    border-radius: 10px;
+    color: #007BFF;
+    background-color: white;
+    font-size: large;
+}
+
+  .login button{
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 20px;
@@ -189,4 +314,222 @@ header {
     padding-right: 1em;
     text-align: left;
     font-size: 40px;
+    text-decoration: none;
+    margin-left: 10px;
   }
+
+.registroform {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    max-width: 80%;
+    margin: 150px auto;
+    font-family: Arial, sans-serif;
+}
+
+.registroform h2 {
+    font-size: 24px;
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registroform label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.registroform input[type="text"],
+.registroform input[type="email"],
+.registroform input[type="password"],
+.registroform textarea,
+.registroform select {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.registroform input:focus,
+.registroform textarea:focus,
+.registroform select:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.registroform .button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.registroform .button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 6px rgba(0, 0, 91, 0.2);
+}
+
+.registroform .button:active {
+    background-color: #00408a;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 91, 0.2);
+}
+
+.registroform .error-message {
+    color: #d9534f;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.registroform input[type="checkbox"],
+.registroform input[type="radio"] {
+    margin-right: 8px;
+}
+
+.registroform a {
+    color: #007BFF;
+    text-decoration: underline;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.registroform a:hover {
+    text-decoration: none;
+}
+.prod-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prod-item h3 {
+    font-size: 22px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.prod-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.prod-item .prod-img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.prod-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.prod-item strong {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.prod-item p strong {
+    font-size: 16px;
+}
+
+.erosaski {
+    background-color: #007BFF; 
+    border: none;
+    color: white; 
+    padding: 12px 24px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin-top: 10%;
+    margin-left: 5%;
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+.erosaski:hover {
+    background-color: #59a9ff; 
+}
+
+#cart-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+#cart-icon {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    color: white;
+    right: 10px;
+}
+
+#cart-count {
+    background: red;
+    color: white;
+    font-size: 14px;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+#cart-dropdown {
+    position: absolute;
+    right: 0;
+    top: 120px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    width: 250px;
+}
+
+#cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-dropdown .clear-cart {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#cart-dropdown .remove-from-cart{
+background-color: transparent;
+border: none;
+color: black;
+}
+
+#cart-dropdown .remove-from-cart:hover{
+cursor: pointer;
+background-color: #59a9ff;
+}
+
+.hidden {
+    display: none;
+}
