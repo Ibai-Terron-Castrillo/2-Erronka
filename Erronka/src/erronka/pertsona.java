@@ -19,6 +19,35 @@ public class pertsona {
         this.nan = nan;
     }
 
-    // Getters y setters
+    // Métodos getters
+    public String getIzena() {
+        return izena;
+    }
+
+    public String getAbizenak() {
+        return abizenak;
+    }
+
+    public String getErabiltzailea() {
+        return erabiltzailea;
+    }
+
+    public String getPasahitza() {
+        return pasahitza;
+    }
+
+    // Getters para otros campos si es necesario
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefonoa() {
+        return telefonoa;
+    }
+
+    public String getNan() {
+        return nan;
+    }
 }
+
 

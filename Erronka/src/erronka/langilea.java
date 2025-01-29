@@ -28,23 +28,4 @@ public class langilea extends pertsona {
             return false; // Inicio de sesión fallido
         }
     }
-    	private String getIzena() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private String getAbizenak() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Object getPasahitza() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Object getErabiltzailea() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
