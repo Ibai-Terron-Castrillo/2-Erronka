@@ -1,7 +1,5 @@
 package erronka;
 
-public class App {
-	package erronka;
 
 	import java.util.Scanner;
 
@@ -35,4 +33,4 @@ public class App {
 	    }
 	}
 
-}
+
