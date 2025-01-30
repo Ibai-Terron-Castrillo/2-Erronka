@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    // Hornitzailea dagoeneko existitzen den egiaztatu
     if ($stmt = $conn->prepare('SELECT idHornitzailea FROM hornitzailea WHERE izena = ?')) {
         $stmt->bind_param('s', $izena);
         $stmt->execute();
@@ -29,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
     }
 
-    // Datuak sartu
     if ($stmt = $conn->prepare('INSERT INTO hornitzailea (Izena, deskripzioa, Telefonoa, Email) VALUES (?, ?, ?, ?)')) {
         $stmt->bind_param('ssss', $izena, $deskripzioa, $telefonoa, $email);
         if ($stmt->execute()) {
