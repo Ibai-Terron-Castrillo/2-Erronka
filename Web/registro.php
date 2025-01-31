@@ -21,12 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    // Pasahitzak konparatu
     if ($pasahitza !== $pasahitza_confirm) {
         errorea("Pasahitzak ez datoz bat");
     }
 
-    // Erabiltzailea dagoeneko existitzen den egiaztatu
     if ($stmt = $conn->prepare('SELECT idBezeroa FROM bezeroa WHERE Erabiltzailea = ?')) {
         $stmt->bind_param('s', $erabiltzailea);
         $stmt->execute();
@@ -38,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
     }
 
-    // Datuak sartu
     if ($stmt = $conn->prepare('INSERT INTO bezeroa (Izena, Abizena, Erabiltzailea, Pasahitza, Email, Telefonoa, Nan) VALUES (?, ?, ?, ?, ?, ?, ?)')) {
         $stmt->bind_param('sssssss', $izena, $abizena, $erabiltzailea, $pasahitza, $email, $telefonoa, $nan);
         if ($stmt->execute()) {

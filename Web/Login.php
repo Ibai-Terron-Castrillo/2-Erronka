@@ -22,8 +22,10 @@
 
     <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
         <form action="saioaItxi.php" method="post" onsubmit="return confirm('Saioa itxi nahi duzu?');">
-            <button type="submit" class="botoia">Saioa Itxi</button>
+            <button type="submit" class="botoia itxi">Saioa Itxi</button>
         </form>
+
+        <input type="button" class="botoia" onclick="location.href='eskaerak.php';" value="Ikusi Nire Eskaerak" />
 
     <?php endif; ?>
 
