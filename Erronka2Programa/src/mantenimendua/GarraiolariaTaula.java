@@ -1,32 +1,31 @@
 package mantenimendua;
-
+ 
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import klaseak.Garraiolaria;
-
+ 
 public class GarraiolariaTaula extends AbstractTableModel {
     private List<Garraiolaria> lista;
     private String[] columnNames = {"ID", "IZENA", "HELBIDEA", "ABIZENAK", "NAN", "TELEFONOA", "ENPRESA"};
-
+ 
     public GarraiolariaTaula(List<Garraiolaria> filtratutakoLista) {
         this.lista = filtratutakoLista;
     }
-
+ 
     @Override
     public int getRowCount() {
         return lista.size();
     }
-
+ 
     @Override
     public int getColumnCount() {
         return columnNames.length;
     }
-    
     @Override
     public String getColumnName(int column) {
         return columnNames[column];
     }
-
+ 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Garraiolaria g = lista.get(rowIndex);
@@ -50,5 +49,3 @@ public class GarraiolariaTaula extends AbstractTableModel {
         }
     }
 }
-
-

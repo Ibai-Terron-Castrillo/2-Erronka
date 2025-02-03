@@ -1,108 +1,109 @@
 package formularioak;
- 
+
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import klaseak.Garraiolaria;
-import mantenimendua.GarraiolariaKudeatu;
-import mantenimendua.GarraiolariaTaula;
- 
-public class Garraiolariak extends JFrame {
- 
+import mantenimendua.BiltegiaKudeatu;
+import mantenimendua.BiltegiaTaula;
+
+public class Biltegia extends JFrame {
+
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JTable table;
-    private GarraiolariaKudeatu dao;
- 
-    public Garraiolariak() {
-        setTitle("Garraiolariak");
+    private BiltegiaKudeatu dao;
+
+    public Biltegia() {
+        setTitle("Biltegia");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1006, 780);
         setLocationRelativeTo(null);
- 
+
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Aukerak");
         menuBar.add(menu);
- 
+
         JMenuItem bueltatu = new JMenuItem("Sarrerara Bueltatu");
         bueltatu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Sarrera sarrera = new Sarrera();
-                sarrera.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				sarrera.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 sarrera.setVisible(true);
                 dispose();
             }
         });
         menu.add(bueltatu);
- 
+
         JMenuItem filtratu = new JMenuItem("Bilaketa Filtroak Aplikatu");
         filtratu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String irizpidea = JOptionPane.showInputDialog(Garraiolariak.this, 
-                        "Sartu bilaketa irizpidea (Izena, Telefonoa, etab...):");
+                String irizpidea = JOptionPane.showInputDialog(Biltegia.this, 
+                        "Sartu bilaketa irizpidea (Izena, Mota, etab...):");
                 if (irizpidea != null && !irizpidea.trim().isEmpty()) {
-                    List<Garraiolaria> filtratutakoLista = dao.filtratuGarraiolariak(irizpidea);
-                    GarraiolariaTaula newModel = new GarraiolariaTaula(filtratutakoLista);
+                    List<klaseak.Biltegia> filtratutakoLista = dao.filtratuBiltegia(irizpidea);
+                    BiltegiaTaula newModel = new BiltegiaTaula(filtratutakoLista);
                     table.setModel(newModel);
                 } else {
-                    List<Garraiolaria> listaOriginal = dao.lortuGarraiolariak();
-                    table.setModel(new GarraiolariaTaula(listaOriginal));
+                    List<klaseak.Biltegia> listaOriginal = dao.lortuBiltegia();
+                    table.setModel(new BiltegiaTaula(listaOriginal));
                 }
             }
         });
         menu.add(filtratu);
+        
         JMenuItem birkargatu = new JMenuItem("Taula Birkargatu");
         birkargatu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 taulaBirkargatu();
             }
- 
-            private void taulaBirkargatu() {
-                List<Garraiolaria> lista = dao.lortuGarraiolariak();
-                GarraiolariaTaula model = new GarraiolariaTaula(lista);
-                if (table == null) {
-                    table = new JTable(model);
-                    JScrollPane scrollPane = new JScrollPane(table);
-                    contentPane.add(scrollPane, BorderLayout.CENTER);
-                } else {
-                    table.setModel(model);
-                }
-            }
+
+			private void taulaBirkargatu() {
+		        List<klaseak.Biltegia> lista = dao.lortuBiltegia();
+		        BiltegiaTaula model = new BiltegiaTaula(lista);
+		        if (table == null) {
+		            table = new JTable(model);
+		            JScrollPane scrollPane = new JScrollPane(table);
+		            contentPane.add(scrollPane, BorderLayout.CENTER);
+		        } else {
+		            table.setModel(model);
+		        }
+		    }
         });
         menu.add(birkargatu);
+        
         JMenuItem saioaItxi = new JMenuItem("Saioa Itxi");
         saioaItxi.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Login login = new Login();
+            	Login login = new Login();
                 login.setVisible(true);
                 dispose();
             }
         });
         menu.add(saioaItxi);
- 
+
         setJMenuBar(menuBar);
- 
+
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout());
         setContentPane(contentPane);
- 
-        dao = new GarraiolariaKudeatu();
-        List<Garraiolaria> lista = dao.lortuGarraiolariak();
-        GarraiolariaTaula model = new GarraiolariaTaula(lista);
+
+        dao = new BiltegiaKudeatu();
+        List<klaseak.Biltegia> lista = dao.lortuBiltegia();
+        BiltegiaTaula model = new BiltegiaTaula(lista);
         table = new JTable(model);
- 
+
         JScrollPane scrollPane = new JScrollPane(table);
         contentPane.add(scrollPane, BorderLayout.CENTER);
     }
- 
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            Garraiolariak frame = new Garraiolariak();
+            Biltegia frame = new Biltegia();
             frame.setVisible(true);
         });
     }
-} 
+}
