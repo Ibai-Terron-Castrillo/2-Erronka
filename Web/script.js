@@ -4,7 +4,6 @@ $(document).ready(function () {
     $('#cart-dropdown').hide()
     closeLogin()
     closeNav()
-
   })
 
   function loadNews (page) {
@@ -17,12 +16,12 @@ $(document).ready(function () {
         if (data.length > 0) {
           data.forEach(function (news) {
             $('#news-container').append(`
-                            <div class="news-item">
-                                <h3>${news.title}</h3>
-                                <p>${news.description}</p>
-                                <img src="${news.image_url}" alt="" style="width:100%;">
-                            </div>
-                        `)
+                              <div class="news-item">
+                                  <h3>${news.title}</h3>
+                                  <p>${news.description}</p>
+                                  <img src="${news.image_url}" alt="" style="width:100%;">
+                              </div>
+                          `)
           })
         } else {
           $('#load-more').hide()
@@ -58,23 +57,23 @@ $(document).ready(function () {
         if (data.length > 0) {
           data.forEach(function (produktuak) {
             let productHtml = `
-                        <div class="prod-item" data-id="${produktuak.ProduktuId}">
-                            <h3>${produktuak.ProduktuIzena}</h3>
-                            <p>Mota: ${produktuak.ProduktuMota}</p>
-                            <p>Egoera: ${produktuak.ProduktuEgoera}</p>
-                            <p>Prezioa: ${produktuak.ProduktuPrezioa}€</p>
-                            <p>Stock: ${produktuak.ProduktuKantitatea}</p>
-                            <img src="${produktuak.ProduktuIruId}" alt="" style="width:100%;">`
+                          <div class="prod-item" data-id="${produktuak.ProduktuId}">
+                              <h3>${produktuak.ProduktuIzena}</h3>
+                              <p>Mota: ${produktuak.ProduktuMota}</p>
+                              <p>Egoera: ${produktuak.ProduktuEgoera}</p>
+                              <p>Prezioa: ${produktuak.ProduktuPrezioa}€</p>
+                              <p>Stock: ${produktuak.ProduktuKantitatea}</p>
+                              <img src="${produktuak.ProduktuIruId}" alt="" style="width:100%;">`
 
             if (isLoggedIn === 'true') {
               productHtml += `
-                            <button class="erosaski buyNow" data-id="${produktuak.ProduktuId}" data-name="${produktuak.ProduktuIzena}">
-                                Erosi
-                            </button>
-                            <button class="erosaski add-to-cart" data-id="${produktuak.ProduktuId}" data-name="${produktuak.ProduktuIzena}">
-                                Saskira gehitu
-                            </button>
-                        `
+                              <button class="erosaski buyNow" data-id="${produktuak.ProduktuId}" data-name="${produktuak.ProduktuIzena}">
+                                  Erosi
+                              </button>
+                              <button class="erosaski add-to-cart" data-id="${produktuak.ProduktuId}" data-name="${produktuak.ProduktuIzena}">
+                                  Saskira gehitu
+                              </button>
+                          `
             }
 
             productHtml += `</div>`
@@ -129,18 +128,18 @@ $(document).ready(function () {
       Object.keys(cart).forEach(productId => {
         let item = cart[productId]
         cartList.append(`
-                <li>
-                    ${item.name} x${item.quantity}
-                    <button class="remove-from-cart" data-id="${productId}"><i class='fas fa-minus'></i></button>
-                </li>
-            `)
+                  <li>
+                      ${item.name} x${item.quantity}
+                      <button class="remove-from-cart" data-id="${productId}"><i class='fas fa-minus'></i></button>
+                  </li>
+              `)
       })
 
       cartList.append(`
-            <li>
-                <button id="clear-cart" class="clear-cart">🗑️ Saskia garbitu</button>
-            </li>
-        `)
+              <li>
+                  <button id="clear-cart" class="clear-cart">🗑️ Saskia garbitu</button>
+              </li>
+          `)
 
       $('.remove-from-cart')
         .off('click')
@@ -230,11 +229,11 @@ function toggleSearch () {
 var mediaqueryList = window.matchMedia('(min-width: 759px)')
 
 function openNav () {
-    if (mediaqueryList.matches) {
-        document.getElementById('mySidebar').style.width = '100%'
-      } else {
-        document.getElementById('mySidebar').style.width = '75%'
-      }
+  if (mediaqueryList.matches) {
+    document.getElementById('mySidebar').style.width = '100%'
+  } else {
+    document.getElementById('mySidebar').style.width = '75%'
+  }
 }
 
 function closeNav () {

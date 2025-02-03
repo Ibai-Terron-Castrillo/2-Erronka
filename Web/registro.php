@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
     }
 
-    if ($stmt = $conn->prepare('INSERT INTO bezeroa (Izena, Abizena, Erabiltzailea, Pasahitza, Email, Telefonoa, Nan) VALUES (?, ?, ?, ?, ?, ?, ?)')) {
+    if ($stmt = $conn->prepare('INSERT INTO bezeroa (Izena, Abizenak, Erabiltzailea, Pasahitza, email, telefonoa, Nan) VALUES (?, ?, ?, ?, ?, ?, ?)')) {
         $stmt->bind_param('sssssss', $izena, $abizena, $erabiltzailea, $pasahitza, $email, $telefonoa, $nan);
         if ($stmt->execute()) {
             echo "<script>

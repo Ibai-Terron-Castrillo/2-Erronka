@@ -9,7 +9,7 @@
     <label for="izena">Izena</label>
     <input type="text" name="izena" id="izena" required>
 
-    <label for="abizena">Abizena</label>
+    <label for="abizena">Abizenak</label>
     <input type="text" name="abizena" id="abizena" required>
 
     <label for="erabiltzailea">Erabiltzaile Izena</label>

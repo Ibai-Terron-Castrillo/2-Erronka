@@ -17,5 +17,9 @@ public class bezeroa extends pertsona {
         eskaerak.add(eskaera);
     }
 
+    public int getIdBezeroa() {
+        return idBezeroa;
+    }
+
     // Getters y setters
 }
