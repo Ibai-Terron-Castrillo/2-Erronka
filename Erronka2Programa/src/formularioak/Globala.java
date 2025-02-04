@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableCellRenderer;
 import mantenimendua.GlobalaKudeatu;
 import mantenimendua.GlobalaTaula;
+import mantenimendua.GlobalaTaula.MultiLineCellRenderer;
 
 public class Globala extends JFrame {
 
@@ -40,15 +41,15 @@ public class Globala extends JFrame {
         JMenuItem filtratu = new JMenuItem("Bilaketa Filtroak Aplikatu");
         filtratu.addActionListener(e -> {
             String irizpidea = JOptionPane.showInputDialog(Globala.this,
-                    "Sartu bilaketa irizpidea (Izena, D, etab...):");
+                    "Sartu bilaketa irizpidea (Izena, Data, etab...):");
             if (irizpidea != null && !irizpidea.trim().isEmpty()) {
                 List<klaseak.Global> filtratutakoLista = dao.filtratuGlobala(irizpidea);
                 table.setModel(new GlobalaTaula(filtratutakoLista));
-                ajustarAlturaFilas();
             } else {
                 table.setModel(new GlobalaTaula(dao.lortuGlobala()));
-                ajustarAlturaFilas();
             }
+            aplicarRenderizadores();
+            ajustarAlturaFilas();
         });
         menu.add(filtratu);
 
@@ -73,7 +74,8 @@ public class Globala extends JFrame {
 
         dao = new GlobalaKudeatu();
         table = new JTable(new GlobalaTaula(dao.lortuGlobala()));
-        table.setDefaultRenderer(String.class, new MultiLineCellRenderer());
+
+        aplicarRenderizadores();
         ajustarAlturaFilas();
 
         JScrollPane scrollPane = new JScrollPane(table);
@@ -82,7 +84,15 @@ public class Globala extends JFrame {
 
     private void taulaBirkargatu() {
         table.setModel(new GlobalaTaula(dao.lortuGlobala()));
+        aplicarRenderizadores();
         ajustarAlturaFilas();
+    }
+
+    private void aplicarRenderizadores() {
+        MultiLineCellRenderer renderer = new MultiLineCellRenderer();
+        for (int i = 0; i < table.getColumnCount(); i++) {
+            table.getColumnModel().getColumn(i).setCellRenderer(renderer);
+        }
     }
 
     private void ajustarAlturaFilas() {
@@ -97,23 +107,4 @@ public class Globala extends JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            Globala frame = new Globala();
-            frame.setVisible(true);
-        });
-    }
-
-    class MultiLineCellRenderer extends JTextArea implements TableCellRenderer {
-        public MultiLineCellRenderer() {
-            setLineWrap(true);
-            setWrapStyleWord(true);
-        }
-
-        @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-            setText(value == null ? "" : value.toString());
-            return this;
-        }
-    }
 }

@@ -2,6 +2,8 @@ package mantenimendua;
  
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
+
+import klaseak.Bezeroa;
 import klaseak.Garraiolaria;
  
 public class GarraiolariaTaula extends AbstractTableModel {
@@ -12,6 +14,10 @@ public class GarraiolariaTaula extends AbstractTableModel {
         this.lista = filtratutakoLista;
     }
  
+    public Garraiolaria getGarraiolariaAt(int rowIndex) {
+        return lista.get(rowIndex);
+    }
+    
     @Override
     public int getRowCount() {
         return lista.size();

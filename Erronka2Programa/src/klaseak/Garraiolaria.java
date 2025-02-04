@@ -46,4 +46,32 @@ public class Garraiolaria {
     public String getEnpresa() {
         return Enpresa;
     }
+
+	public void setIdGarraiolaria(int idGarraiolaria) {
+		IdGarraiolaria = idGarraiolaria;
+	}
+
+	public void setIzena(String izena) {
+		Izena = izena;
+	}
+
+	public void setHelbidea(String helbidea) {
+		Helbidea = helbidea;
+	}
+
+	public void setAbizenak(String abizenak) {
+		Abizenak = abizenak;
+	}
+
+	public void setNan(String nan) {
+		Nan = nan;
+	}
+
+	public void setTelefonoa(String telefonoa) {
+		Telefonoa = telefonoa;
+	}
+
+	public void setEnpresa(String enpresa) {
+		Enpresa = enpresa;
+	}
 }

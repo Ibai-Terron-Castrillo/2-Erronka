@@ -14,6 +14,10 @@ public class BiltegiaTaula extends AbstractTableModel {
         this.lista = lista;
     }
 
+    public Biltegia getProduktuaAt(int rowIndex) {
+        return lista.get(rowIndex);
+    }
+    
     @Override
     public int getRowCount() {
         return lista.size();

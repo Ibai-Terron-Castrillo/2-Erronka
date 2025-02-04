@@ -4,8 +4,18 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import javax.swing.*;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
+
 import klaseak.Bezeroa;
 import mantenimendua.BezeroakKudeatu;
 import mantenimendua.BezeroakTaula;
@@ -27,11 +37,56 @@ public class BezeroakAdmin extends JFrame {
         JMenu menu = new JMenu("Aukerak");
         menuBar.add(menu);
 
+        JMenuItem sortu = new JMenuItem("Bezeroa Sortu");
+        sortu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                BezeroaSortu formulario = new BezeroaSortu(BezeroakAdmin.this, dao);
+                formulario.setVisible(true);
+            }
+        });
+        menu.add(sortu);
+        
+        JMenuItem eguneratu = new JMenuItem("Bezeroa Eguneratu");
+        eguneratu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int filaSeleccionada = table.getSelectedRow();
+                if (filaSeleccionada != -1) {
+                    Bezeroa seleccionado = ((BezeroakTaula) table.getModel()).getBezeroaAt(filaSeleccionada);
+                    BezeroaEguneratu formulario = new BezeroaEguneratu(BezeroakAdmin.this, dao, seleccionado);
+                    formulario.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(BezeroakAdmin.this, "Ezarri bezero bat lehenik");
+                }
+            }
+        });
+        menu.add(eguneratu);
+
+        JMenuItem ezabatu = new JMenuItem("Bezeroa Ezabatu");
+        ezabatu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int row = table.getSelectedRow();
+                if (row != -1) {
+                    int idBezeroa = (int) table.getValueAt(row, 0);
+                    int confirm = JOptionPane.showConfirmDialog(BezeroakAdmin.this, 
+                            "Ziur zaude bezero hau ezabatu nahi duzula?", "Bezeroa Ezabatu", JOptionPane.YES_NO_OPTION);
+                    if (confirm == JOptionPane.YES_OPTION) {
+                        dao.ezabatuBezeroa(idBezeroa);
+                        taulaBirkargatu();
+                        JOptionPane.showMessageDialog(BezeroakAdmin.this, "Bezeroa ezabatua!");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(BezeroakAdmin.this, "Lehenik bezero bat aukeratu!");
+                }
+            }
+        });
+        menu.add(ezabatu);
+
+
         JMenuItem bueltatu = new JMenuItem("Sarrerara Bueltatu");
         bueltatu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Sarrera sarrera = new Sarrera();
-				sarrera.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                SarreraAdmin sarrera = new SarreraAdmin();
+                sarrera.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 sarrera.setVisible(true);
                 dispose();
             }
@@ -74,11 +129,11 @@ public class BezeroakAdmin extends JFrame {
 		    }
         });
         menu.add(birkargatu);
-        
+
         JMenuItem saioaItxi = new JMenuItem("Saioa Itxi");
         saioaItxi.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	Login login = new Login();
+                Login login = new Login();
                 login.setVisible(true);
                 dispose();
             }
@@ -101,7 +156,19 @@ public class BezeroakAdmin extends JFrame {
         contentPane.add(scrollPane, BorderLayout.CENTER);
     }
 
-    public static void main(String[] args) {
+    protected void taulaBirkargatu() {
+        List<Bezeroa> lista = dao.lortuBezeroak();
+        BezeroakTaula model = new BezeroakTaula(lista);
+        if (table == null) {
+            table = new JTable(model);
+            JScrollPane scrollPane = new JScrollPane(table);
+            contentPane.add(scrollPane, BorderLayout.CENTER);
+        } else {
+            table.setModel(model);
+        }
+    }
+
+	public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             BezeroakAdmin frame = new BezeroakAdmin();
             frame.setVisible(true);

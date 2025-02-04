@@ -3,6 +3,7 @@ package mantenimendua;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,5 +85,55 @@ public class BiltegiaKudeatu {
 			System.out.println("Errorea");
 		}
 		return lista;
+	}
+	
+	public void sortuProduktua(Biltegia biltegia) {
+		
+
+	    String sql = "INSERT INTO `erronka2`.`biltegia` (`ProduktuIzena`,`ProduktuMota`,`ProduktuEgoera`,`ProduktuIruId`,`ProduktuPrezioa`,`ProduktuKantitatea`) VALUES (?, ?, ?, ?, ?, ?)";
+	    try {
+			Connection conn = DatabaseConnection.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+	        ps.setString(1, biltegia.getProduktuIzena());
+	        ps.setString(2, biltegia.getProduktuMota());
+	        ps.setString(3, biltegia.getProduktuEgoera());
+	        ps.setString(4, biltegia.getProduktuIruId());
+	        ps.setDouble(5, biltegia.getProduktuPrezioa());
+	        ps.setInt(6, biltegia.getProduktuKantitatea());
+	        ps.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+	public void eguneratuBiltegia(Biltegia biltegia) {
+
+	    String sql = "UPDATE biltegia SET ProduktuIzena = ?, ProduktuMota = ?, ProduktuEgoera = ?, ProduktuIruId = ?, ProduktuPrezioa = ?, ProduktuKantitatea = ? WHERE ProduktuId = ?";
+	    try {
+			Connection conn = DatabaseConnection.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, biltegia.getProduktuIzena());
+	        ps.setString(2, biltegia.getProduktuMota());
+	        ps.setString(3, biltegia.getProduktuEgoera());
+	        ps.setString(4, biltegia.getProduktuIruId());
+	        ps.setDouble(5, biltegia.getProduktuPrezioa());
+	        ps.setInt(6, biltegia.getProduktuKantitatea());
+	        ps.setInt(7, biltegia.getProduktuId());
+	        ps.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
+	public void ezabatuProduktua(int ProduktuId) {
+	    String sql = "DELETE FROM biltegia WHERE ProduktuId = ?";
+	    try {
+			Connection conn = DatabaseConnection.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+	        ps.setInt(1, ProduktuId);
+	        ps.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
 	}
 }

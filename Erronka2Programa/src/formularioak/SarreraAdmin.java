@@ -13,7 +13,6 @@ import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-
 public class SarreraAdmin extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -46,12 +45,12 @@ public class SarreraAdmin extends JFrame {
 
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{180, 180, 180, 180, 0};
-		gbl_contentPane.rowHeights = new int[]{1, 0, 0, 0};
-		gbl_contentPane.columnWeights = new double[]{1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
-		gbl_contentPane.rowWeights = new double[]{1.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_contentPane.columnWidths = new int[] { 180, 180, 180, 180, 0 };
+		gbl_contentPane.rowHeights = new int[] { 1, 0, 0, 0 };
+		gbl_contentPane.columnWeights = new double[] { 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE };
+		gbl_contentPane.rowWeights = new double[] { 1.0, 0.0, 1.0, Double.MIN_VALUE };
 		contentPane.setLayout(gbl_contentPane);
-		
+
 		JButton btnNewButton = new JButton("Bezeroak");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -68,18 +67,26 @@ public class SarreraAdmin extends JFrame {
 		gbc_btnNewButton.gridx = 0;
 		gbc_btnNewButton.gridy = 0;
 		contentPane.add(btnNewButton, gbc_btnNewButton);
-		
+
 		JButton btnNewButton_2 = new JButton("Eskaerak");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Eskaerak eskaerak = new Eskaerak();
+				EskaerakAdmin eskaerak = new EskaerakAdmin();
 				eskaerak.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				eskaerak.setVisible(true);
 				dispose();
 			}
 		});
-		
+
 		JButton btnNewButton_3_1_1 = new JButton("Erosketak");
+		btnNewButton_3_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Erosketak Erosketak = new Erosketak();
+				Erosketak.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				Erosketak.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_3_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		GridBagConstraints gbc_btnNewButton_3_1_1 = new GridBagConstraints();
 		gbc_btnNewButton_3_1_1.fill = GridBagConstraints.BOTH;
@@ -94,21 +101,27 @@ public class SarreraAdmin extends JFrame {
 		gbc_btnNewButton_2.gridx = 2;
 		gbc_btnNewButton_2.gridy = 0;
 		contentPane.add(btnNewButton_2, gbc_btnNewButton_2);
-		
+
 		JButton btnNewButton_4 = new JButton("Salmenten Taula Global Konjuntoa");
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Globala global = new Globala();
+				GlobalaAdmin global = new GlobalaAdmin();
 				global.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                global.setVisible(true);
-                dispose();
+				global.setVisible(true);
+				dispose();
 			}
 		});
-		
+
 		JButton btnNewButton_2_1 = new JButton("Langileak");
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				Langileak Langileak = new Langileak();
+				Langileak.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				Langileak.setVisible(true);
+				dispose();
+
 			}
 		});
 		btnNewButton_2_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -125,14 +138,14 @@ public class SarreraAdmin extends JFrame {
 		gbc_btnNewButton_4.gridx = 0;
 		gbc_btnNewButton_4.gridy = 1;
 		contentPane.add(btnNewButton_4, gbc_btnNewButton_4);
-		
+
 		JButton btnNewButton_3 = new JButton("Biltegia");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Biltegia biltegia = new Biltegia();
+				BiltegiaAdmin biltegia = new BiltegiaAdmin();
 				biltegia.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                biltegia.setVisible(true);
-                dispose();
+				biltegia.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -142,18 +155,30 @@ public class SarreraAdmin extends JFrame {
 		gbc_btnNewButton_3.gridx = 0;
 		gbc_btnNewButton_3.gridy = 2;
 		contentPane.add(btnNewButton_3, gbc_btnNewButton_3);
-		
+
 		JButton btnNewButton_1 = new JButton("Garraiolariak");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Garraiolariak Garraiolariak = new Garraiolariak();
+
+				GarraiolariakAdmin Garraiolariak = new GarraiolariakAdmin();
 				Garraiolariak.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				Garraiolariak.setVisible(true);
-                dispose();
+				dispose();
+
 			}
 		});
-		
+
 		JButton btnNewButton_3_1 = new JButton("Hornitzaileak");
+		btnNewButton_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				Hornitzaileak Hornitzaileak = new Hornitzaileak();
+				Hornitzaileak.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				Hornitzaileak.setVisible(true);
+				dispose();
+
+			}
+		});
 		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		GridBagConstraints gbc_btnNewButton_3_1 = new GridBagConstraints();
 		gbc_btnNewButton_3_1.fill = GridBagConstraints.BOTH;
@@ -168,8 +193,18 @@ public class SarreraAdmin extends JFrame {
 		gbc_btnNewButton_1.gridx = 2;
 		gbc_btnNewButton_1.gridy = 2;
 		contentPane.add(btnNewButton_1, gbc_btnNewButton_1);
-		
+
 		JButton btnNewButton_2_1_1 = new JButton("Eskaera_Biltegia");
+		btnNewButton_2_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				Eskaera_Biltegia Eskaera_Biltegia = new Eskaera_Biltegia();
+				Eskaera_Biltegia.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				Eskaera_Biltegia.setVisible(true);
+				dispose();
+
+			}
+		});
 		btnNewButton_2_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		GridBagConstraints gbc_btnNewButton_2_1_1 = new GridBagConstraints();
 		gbc_btnNewButton_2_1_1.fill = GridBagConstraints.BOTH;

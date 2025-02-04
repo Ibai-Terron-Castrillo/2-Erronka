@@ -14,6 +14,10 @@ public class BezeroakTaula extends AbstractTableModel {
         this.lista = lista;
     }
 
+    public Bezeroa getBezeroaAt(int rowIndex) {
+        return lista.get(rowIndex);
+    }
+    
     @Override
     public int getRowCount() {
         return lista.size();

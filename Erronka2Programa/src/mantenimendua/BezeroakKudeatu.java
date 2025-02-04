@@ -3,6 +3,7 @@ package mantenimendua;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,4 +84,56 @@ public class BezeroakKudeatu {
 		}
 		return lista;
 	}
+	
+	public void sortuBezeroa(Bezeroa bezeroa) {
+	    String sql = "INSERT INTO bezeroa (izena, abizenak, erabiltzailea, pasahitza, email, telefonoa, nan) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	    try {
+			Connection conn = DatabaseConnection.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+	        ps.setString(1, bezeroa.getIzena());
+	        ps.setString(2, bezeroa.getAbizenak());
+	        ps.setString(3, bezeroa.getErabiltzailea());
+	        ps.setString(4, bezeroa.getPasahitza());
+	        ps.setString(5, bezeroa.getEmail());
+	        ps.setString(6, bezeroa.getTelefonoa());
+	        ps.setString(7, bezeroa.getNan());
+	        ps.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+	public void eguneratuBezeroa(Bezeroa bezeroa) {
+	    String sql = "UPDATE bezeroa SET izena = ?, abizenak = ?, erabiltzailea = ?, pasahitza = ?, email = ?, telefonoa = ?, nan = ? WHERE idBezeroa = ?";
+	    try {
+			Connection conn = DatabaseConnection.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+	        ps.setString(1, bezeroa.getIzena());
+	        ps.setString(2, bezeroa.getAbizenak());
+	        ps.setString(3, bezeroa.getErabiltzailea());
+	        ps.setString(4, bezeroa.getPasahitza());
+	        ps.setString(5, bezeroa.getEmail());
+	        ps.setString(6, bezeroa.getTelefonoa());
+	        ps.setString(7, bezeroa.getNan());
+	        ps.setInt(8, bezeroa.getIdBezeroa());
+	        ps.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
+	public void ezabatuBezeroa(int idBezeroa) {
+	    String sql = "DELETE FROM bezeroa WHERE idBezeroa = ?";
+	    try {
+			Connection conn = DatabaseConnection.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+	        ps.setInt(1, idBezeroa);
+	        ps.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+
+
 }

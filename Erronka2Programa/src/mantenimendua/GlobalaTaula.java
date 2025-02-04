@@ -62,7 +62,6 @@ public class GlobalaTaula extends AbstractTableModel {
         }
     }
 
-    // Renderizador para la columna de "ESKATUTAKO PRODUKTUAK"
     public static class MultiLineCellRenderer extends JTextArea implements TableCellRenderer {
         public MultiLineCellRenderer() {
             setLineWrap(true);
