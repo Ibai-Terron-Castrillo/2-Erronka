@@ -19,9 +19,9 @@ $conn = konexioaSortu();
 
 $sql = "SELECT 
 Eskaera.idEskaera AS EskaeraID,
-CONCAT(Bezeroa.Izena, ' ', Bezeroa.Abizena) AS Bezeroa,
-Bezeroa.Email AS Email,
-Bezeroa.Telefonoa AS Telefonoa,
+CONCAT(Bezeroa.Izena, ' ', Bezeroa.Abizenak) AS Bezeroa,
+Bezeroa.email AS Email,
+Bezeroa.telefonoa AS Telefonoa,
 Eskaera.data AS 'Eskaera Data',
 Eskaera.helbidea AS Helbidea,
 GROUP_CONCAT(CONCAT(biltegia.ProduktuIzena, ' (', ' x ', eskaera_biltegia.Kantitatea, ')') SEPARATOR ', ') AS Produktuak,
