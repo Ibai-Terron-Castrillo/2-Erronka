@@ -25,7 +25,7 @@ if (isset($_GET['product'])) {
 
 // Bezeroaren datuak eskuratzea
 try {
-    $stmt = $conn->prepare("SELECT izena, abizena, email FROM bezeroa WHERE idBezeroa = ?");
+    $stmt = $conn->prepare("SELECT Izena, Abizenak, email FROM bezeroa WHERE idBezeroa = ?");
     $stmt->bind_param("i", $bezeroa_id);
     $stmt->execute();
     $stmt->bind_result($izena, $abizena, $emaila);
