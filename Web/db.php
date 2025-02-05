@@ -3,9 +3,9 @@
 function konexioaSortu()
 {
 
-    $servername = "localhost:3306";
-    $username = "root";
-    $password = "1MG2024";
+    $servername = "172.16.237.119";
+    $username = "erabiltzaile";
+    $password = "3Taldea3";
     $dbname = "erronka2";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
