@@ -1,5 +1,7 @@
 <?php
 require_once("Style+Js.php");
+require_once("itzuli.html");
+
 session_start();
 require_once("db.php");
 $conn = konexioaSortu();

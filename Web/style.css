@@ -165,6 +165,22 @@ header {
     text-align: center;
     margin-bottom: 20px;
 }
+#google_translate_element{
+    position: fixed;
+    top: 20%;
+    left: 25%;
+}
+body {
+    top: 0px !important;
+   }
+.skiptranslate {
+    height: auto !important;
+}
+
+   body > .skiptranslate > iframe.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+   }
 
 .contact-info p {
     font-size: 16px;
@@ -184,7 +200,12 @@ header {
 }
 
 @media (min-width: 768px) {
-
+    #google_translate_element{
+        position: fixed;
+        top: 20%;
+        right: auto;
+        left: 70%;
+    }
     #prod-container{
         display: grid;
         grid-template-columns: repeat(3, 1fr);

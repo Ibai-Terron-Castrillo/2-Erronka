@@ -5,7 +5,8 @@ session_start();
 <title>Berriak</title>
 </head>
 
-<body>
+<body >
+
     <header>
         <?PHP require_once("header.php"); ?>
         <h1>Berriak</h1>
@@ -13,13 +14,13 @@ session_start();
     </header>
     <?PHP require_once("Sidebar.php"); ?>
     <?PHP require_once("Login.php"); ?>
+    <?PHP require_once("itzuli.html"); ?>
 
     <div class="container" id="news-container">
 
     </div>
 
     <button class="load-more" id="load-more">Kargatu gehiago</button>
-
 </body>
 
 </html>

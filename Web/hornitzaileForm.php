@@ -1,4 +1,6 @@
 <?php require_once("Style+Js.php"); ?>
+<?PHP require_once("itzuli.html"); ?>
+
 <title>Hornitzaile Bihurtu</title>
 
 <header>

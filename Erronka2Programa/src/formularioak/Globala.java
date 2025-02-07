@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableCellRenderer;
 import mantenimendua.GlobalaKudeatu;
 import mantenimendua.GlobalaTaula;
-import mantenimendua.GlobalaTaula.MultiLineCellRenderer;
+import mantenimendua.GlobalaTaula.CustomCellRenderer;
 
 public class Globala extends JFrame {
 
@@ -89,7 +89,7 @@ public class Globala extends JFrame {
     }
 
     private void aplicarRenderizadores() {
-        MultiLineCellRenderer renderer = new MultiLineCellRenderer();
+        CustomCellRenderer renderer = new CustomCellRenderer();
         for (int i = 0; i < table.getColumnCount(); i++) {
             table.getColumnModel().getColumn(i).setCellRenderer(renderer);
         }

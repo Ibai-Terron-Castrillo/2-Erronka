@@ -30,10 +30,10 @@ public class EskaerakKudeatu {
 				Date data = rs.getDate("data");
 				String helbidea = rs.getString("helbidea");
 				String eskaeraEgoera = rs.getString("eskaeraEgoera");
-				int idEskaera = rs.getInt("idEskaera");
+				int idBezeroa = rs.getInt("idBezeroa");
 				int idGarraiolaria = rs.getInt("idGarraiolaria");
 				
-				Eskaera b = new Eskaera(id, data, helbidea, eskaeraEgoera, idEskaera, idGarraiolaria);
+				Eskaera b = new Eskaera(id, data, helbidea, eskaeraEgoera, idBezeroa, idGarraiolaria);
 				lista.add(b);
 			}
 		} catch (Exception e) {

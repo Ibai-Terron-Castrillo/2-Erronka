@@ -13,6 +13,8 @@ session_start();
     </header>
     <?PHP require_once("Sidebar.php"); ?>
     <?PHP require_once("Login.php"); ?>
+    <?PHP require_once("itzuli.html"); ?>
+
     <div class="container">
         <section class="contact-info">
             <h2>Kontaktu Informazioa</h2>

@@ -1,13 +1,12 @@
 <?php require_once("Style+Js.php"); ?>
+<?PHP require_once("itzuli.html"); ?>
+
 <title>Eskaerak</title>
 </head>
 <header>
     <a href="berriak.php" class="openbtn"><i class="fa fa-home" aria-hidden="true"></i></a>
     <h1>Nire Eskaerak</h1>
 </header>
-
-
-
 
 <?php
 session_start();
@@ -63,18 +62,17 @@ if ($result->num_rows > 0) {
                 <h3>Eskatutako Produktuak:</h3>
                 <p>' . $row["Produktuak"] . '</p>
     
-                
-                
-                <!-- Footer de la solicitud -->
                 <div class="eskaera-footer">
                     <h2>Guztira: ' . $row["Guztira"] . '</h2>
-                <h3>Garraioa: ' . $row["Garraiolaria"] . '</h3>
-                <h3>Eskaeraren Egoera: ' . $row["Eskaera Egoera"] . '</h3>
-                </div>
-            ';
-        echo "</div>";
+                    <h3>Garraioa: ' . $row["Garraiolaria"] . '</h3>
+                    <h3>Eskaeraren Egoera: ' . $row["Eskaera Egoera"] . '</h3>
+        ';
+        
+        if ($row["Eskaera Egoera"] != "Prozesatzen") {
+            echo '<a href="deskargatu_pdf.php?id=' . $row["EskaeraID"] . '" class="btn-download" target="_blank">Deskargatu Faktura</a>';
+        }
+
+        echo "</div></div>";
     }
-
 }
-
-
+?>

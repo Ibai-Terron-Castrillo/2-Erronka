@@ -30,6 +30,7 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? '
     </header>
     <?PHP require_once("Sidebar.php"); ?>
     <?PHP require_once("Login.php"); ?>
+    <?PHP require_once("itzuli.html"); ?>
 
 
     <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
